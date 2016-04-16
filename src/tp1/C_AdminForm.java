@@ -637,7 +637,7 @@ public class C_AdminForm extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        Tp1.pass = ""; Tp1.usr = ""; Tp1.chk3 = 0;
+        Tp1.pass = ""; Tp1.usr = ""; 
         this.dispose();
         new B_LoginForm().setVisible(true);
 

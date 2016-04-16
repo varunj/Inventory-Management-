@@ -24,8 +24,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class D_GenForm extends javax.swing.JFrame {
 
-    String ItemCode, ItemName, chk;
-        int Price,Num,Total,chk2;
+    String ItemCode, ItemName;
+        int Price,Num,Total;
     
     /**
      * Creates new form NewJFrame2
@@ -42,7 +42,7 @@ public class D_GenForm extends javax.swing.JFrame {
                 s = Integer.parseInt(ls.getText());
                 if(Integer.parseInt(ls.getText()) == 0)
                 {
-                 s = 60;   
+                    s = 60;   
                 }
                 s = s-1;
                 if(s==59)
@@ -66,26 +66,23 @@ public class D_GenForm extends javax.swing.JFrame {
         model2.setRowCount(0);
         try
         {
-	Class.forName("java.sql.DriverManager");
-	Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
-	Statement stmt = (Statement) con.createStatement();
-	String query = "SELECT * FROM items;";
-        ResultSet rs = stmt.executeQuery(query);
-        while(rs.next())
-        {
-            String a = rs.getString(1);
-            String b = rs.getString(4);
-            model2.addRow(new Object[] {a,b});
-            cb1.addItem(a);
-        }
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
+            Statement stmt = (Statement) con.createStatement();
+            String query = "SELECT * FROM items;";
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next())
+            {
+                String a = rs.getString(1);
+                String b = rs.getString(4);
+                model2.addRow(new Object[] {a,b});
+                cb1.addItem(a);
+            }
         }
         catch(Exception e)
         {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-     
-        
-        
     }
     
 
@@ -98,6 +95,20 @@ public class D_GenForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tab1 = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
+        jButton2.setIcon(new javax.swing.ImageIcon("resources//RefreshIcon.png"));
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tab2 = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        ls = new javax.swing.JLabel();
+        lm = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         cb1 = new javax.swing.JComboBox();
         spn = new javax.swing.JSpinner();
         jLabel3 = new javax.swing.JLabel();
@@ -106,67 +117,20 @@ public class D_GenForm extends javax.swing.JFrame {
         t1 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tab1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tab2 = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        ls = new javax.swing.JLabel();
-        lm = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1280, 768));
+        setMaximumSize(new java.awt.Dimension(1000, 490));
+        setPreferredSize(new java.awt.Dimension(1000, 490));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
             }
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
-            }
-        });
-
-        cb1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Item Code" }));
-        cb1.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cb1ItemStateChanged(evt);
-            }
-        });
-
-        spn.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
-        spn.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                spnStateChanged(evt);
-            }
-        });
-
-        jLabel3.setText("Price");
-
-        t2.setEditable(false);
-        t2.setEnabled(false);
-        t2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                t2ActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setText("Description");
-
-        t1.setEditable(false);
-        t1.setEnabled(false);
-
-        jLabel5.setText("Rs");
-
-        jButton1.setText("Place Order");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
             }
         });
 
@@ -180,7 +144,6 @@ public class D_GenForm extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tab1);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tp1/RefreshIcon.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -234,6 +197,96 @@ public class D_GenForm extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jLabel6.setText("Refresh Table");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel7.setText("Add Order");
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 153, 153), new java.awt.Color(153, 153, 153), java.awt.Color.gray, java.awt.Color.gray));
+
+        cb1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Item Code" }));
+        cb1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb1ItemStateChanged(evt);
+            }
+        });
+
+        spn.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
+        spn.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                spnStateChanged(evt);
+            }
+        });
+
+        jLabel3.setText("Price");
+
+        t2.setEditable(false);
+        t2.setEnabled(false);
+        t2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                t2ActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Description");
+
+        t1.setEditable(false);
+        t1.setEnabled(false);
+
+        jLabel5.setText("Rs");
+
+        jButton1.setText("Place Order");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(cb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(t1)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1)
+                            .addComponent(spn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(18, 18, 18)
+                                .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 179, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel5)
+                    .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         jMenu1.setText("Options");
 
         jMenuItem1.setText("Change Password");
@@ -261,68 +314,49 @@ public class D_GenForm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 872, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(408, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel7)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(cb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(113, 113, 113)
-                                .addComponent(spn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addGap(110, 110, 110)
-                                        .addComponent(jLabel5))
-                                    .addComponent(jLabel4))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(t1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton1)
-                                    .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(199, 199, 199)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(139, 139, 139))
+                                .addComponent(jLabel6)
+                                .addGap(34, 34, 34)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 861, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(spn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
-                        .addGap(36, 36, 36)
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(11, 11, 11)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(122, 122, 122)
+                                .addComponent(jLabel6)
+                                .addGap(9, 9, 9))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(43, 43, 43)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         pack();
@@ -330,13 +364,13 @@ public class D_GenForm extends javax.swing.JFrame {
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
-        jMenu1.setText(""+Tp1.usr);
+        jMenu1.setText(" User: " + Tp1.usr + " Click for Options");
         
     }//GEN-LAST:event_formWindowActivated
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        Tp1.pass = ""; Tp1.usr = ""; Tp1.chk3 = 0;
+        Tp1.pass = ""; Tp1.usr = "";
         this.dispose();
         new B_LoginForm().setVisible(true);
         
@@ -354,12 +388,12 @@ public class D_GenForm extends javax.swing.JFrame {
 
         try
         {
-	Class.forName("java.sql.DriverManager");
-	Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
-	Statement stmt = (Statement) con.createStatement();
-	String query = "UPDATE id SET pw = '"+np+"' WHERE usr = '"+Tp1.usr+"' ;";
-        stmt.executeUpdate(query);
-        JOptionPane.showMessageDialog(this,"Your password has been changed successfully. Please contact the Administrators.");
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
+            Statement stmt = (Statement) con.createStatement();
+            String query = "UPDATE id SET pw = '"+np+"' WHERE usr = '"+Tp1.usr+"' ;";
+            stmt.executeUpdate(query);
+            JOptionPane.showMessageDialog(this,"Your password has been changed successfully. Please contact the Administrators.");
         }
         catch(Exception e)
         {
@@ -372,16 +406,16 @@ public class D_GenForm extends javax.swing.JFrame {
         ItemCode = (String) cb1.getSelectedItem();
         try
         {
-	Class.forName("java.sql.DriverManager");
-	Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
-	Statement stmt = (Statement) con.createStatement();
-	String query = "SELECT * FROM items WHERE ItemCode = '"+ItemCode+"' ;";
-        ResultSet rs = stmt.executeQuery(query);
-        if(rs.next())
-        {
-            ItemName = rs.getString(2);
-            Price = Integer.parseInt(rs.getString(3));
-        }
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
+            Statement stmt = (Statement) con.createStatement();
+            String query = "SELECT * FROM items WHERE ItemCode = '"+ItemCode+"' ;";
+            ResultSet rs = stmt.executeQuery(query);
+            if(rs.next())
+            {
+                ItemName = rs.getString(2);
+                Price = Integer.parseInt(rs.getString(3));
+            }
         }
         catch(Exception e)
         {
@@ -440,12 +474,12 @@ public class D_GenForm extends javax.swing.JFrame {
         String order = "" + year + month + day + hour + minute + second;
         try
         {
-	Class.forName("java.sql.DriverManager");
-	Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
-	Statement stmt = (Statement) con.createStatement();
-	String query = "INSERT INTO orders VALUES('"+order+"','"+Tp1.usr+"','"+ItemCode+"','"+ItemName+"',"+Num+","+Total+",sysdate(),'Order Placed','Unchecked');";
-        stmt.executeUpdate(query);
-        JOptionPane.showMessageDialog(this, "Order Placed Successfully");
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
+            Statement stmt = (Statement) con.createStatement();
+            String query = "INSERT INTO orders VALUES('"+order+"','"+Tp1.usr+"','"+ItemCode+"','"+ItemName+"',"+Num+","+Total+",sysdate(),'Order Placed','Checked');";
+            stmt.executeUpdate(query);
+            JOptionPane.showMessageDialog(this, "Order Placed Successfully");
         }
         catch(Exception e)
         {
@@ -459,22 +493,22 @@ public class D_GenForm extends javax.swing.JFrame {
         model.setRowCount(0);
         try
         {
-	Class.forName("java.sql.DriverManager");
-	Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
-	Statement stmt = (Statement) con.createStatement();
-	String query = "SELECT * FROM orders WHERE User = '"+Tp1.usr+"';";
-        ResultSet rs = stmt.executeQuery(query);
-        while(rs.next())
-        {
-            String a = rs.getString(1);
-            String b = rs.getString(3);
-            String c = rs.getString(4);
-            String d = rs.getString(5);
-            String e = rs.getString(6);
-            String f = rs.getString(7);
-            String g = rs.getString(8);
-            model.addRow(new Object[] {a,b,c,d,e,f,g});
-        }
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
+            Statement stmt = (Statement) con.createStatement();
+            String query = "SELECT * FROM orders WHERE User = '"+Tp1.usr+"';";
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next())
+            {
+                String a = rs.getString(1);
+                String b = rs.getString(3);
+                String c = rs.getString(4);
+                String d = rs.getString(5);
+                String e = rs.getString(6);
+                String f = rs.getString(7);
+                String g = rs.getString(8);
+                model.addRow(new Object[] {a,b,c,d,e,f,g});
+            }
         }
         catch(Exception e)
         {
@@ -485,43 +519,34 @@ public class D_GenForm extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-       try
+        try
         {
-	Class.forName("java.sql.DriverManager");
-	Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
-	Statement stmt = (Statement) con.createStatement();
-	String query = "SELECT * FROM orders WHERE User = '"+Tp1.usr+"';";
-        ResultSet rs = stmt.executeQuery(query);
-        while(rs.next())
-        {
-            String a = rs.getString(1);
-            String b = rs.getString(9);
-            if(b.equals("Unchecked"))
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
+            Statement stmt = (Statement) con.createStatement();
+            String query = "SELECT * FROM orders WHERE User = '"+Tp1.usr+"';";
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next())
             {
-                chk = b;
-                chk2 = Integer.parseInt(a);
-                Tp1.chk3 = 1;break;
+                String b = rs.getString(9);
+                if(b.equals("Unchecked"))
+                {
+                    JOptionPane.showMessageDialog(this, "Your have updates for your order(s)");
+                }
             }
-        }
-        
         }
         catch(Exception e)
         {
             JOptionPane.showMessageDialog(D_GenForm.this, e.getMessage());
         }
        
-       if(Tp1.chk3 == 1)
+        try
         {
-            JOptionPane.showMessageDialog(this, "Your Order(s) Has Been Placed");
-            Tp1.chk3 = 0;
-        } 
-       try
-        {
-	Class.forName("java.sql.DriverManager");
-	Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
-	Statement stmt = (Statement) con.createStatement();
-        String query2 = "UPDATE orders SET Checked = 'Checked' WHERE User = '"+Tp1.usr+"' AND Checked = 'Unchecked';";
-        stmt.executeUpdate(query2);
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
+            Statement stmt = (Statement) con.createStatement();
+            String query2 = "UPDATE orders SET Checked = 'Checked' WHERE User = '"+Tp1.usr+"' AND Checked = 'Unchecked';";
+            stmt.executeUpdate(query2);
         }
         catch(Exception e)
         {
@@ -579,11 +604,14 @@ public class D_GenForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lm;

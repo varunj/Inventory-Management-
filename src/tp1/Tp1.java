@@ -11,7 +11,6 @@ package tp1;
 public class Tp1 {
 
     static String usr,pass;
-    static int chk3;
     /**
      * @param args the command line arguments
      */
@@ -19,7 +18,7 @@ public class Tp1 {
              java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new A_IntroForm().setVisible(true);
+                new B_LoginForm().setVisible(true);
             }
         });   // TODO code application logic here
     }

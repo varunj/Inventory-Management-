@@ -10,5 +10,13 @@ C: admin
 	retrieve orders
 	modify to complete order
 	delete item
+D: user
+	retrieve itms
+	modify to change password
+	retrieve price, desc
+	add order
+	retrieve orders
+	find uncheck at open
+	modify unchk at open
 E: chnage password 
 	match with <old> to replace
