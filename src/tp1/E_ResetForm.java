@@ -6,9 +6,7 @@ package tp1;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -192,11 +190,11 @@ public class E_ResetForm extends javax.swing.JFrame {
         n=n+1;
              switch(n)
         {
-            case 1: jLabel5.setIcon(new ImageIcon("C:\\Users\\Public\\IP\\Captcha2.jpg"));break;
-            case 2: jLabel5.setIcon(new ImageIcon("C:\\Users\\Public\\IP\\Captcha3.jpg"));break;
-            case 3: jLabel5.setIcon(new ImageIcon("C:\\Users\\Public\\IP\\Captcha4.jpg"));break;
-            case 4: jLabel5.setIcon(new ImageIcon("C:\\Users\\Public\\IP\\Captcha5.jpg"));break;
-            case 5: jLabel5.setIcon(new ImageIcon("C:\\Users\\Public\\IP\\Captcha6.jpg"));break;
+            case 1: jLabel5.setIcon(new ImageIcon(".\\Captcha2.jpg"));break;
+            case 2: jLabel5.setIcon(new ImageIcon(".\\Captcha3.jpg"));break;
+            case 3: jLabel5.setIcon(new ImageIcon(".\\Captcha4.jpg"));break;
+            case 4: jLabel5.setIcon(new ImageIcon(".\\Captcha5.jpg"));break;
+            case 5: jLabel5.setIcon(new ImageIcon(".\\Captcha6.jpg"));break;
             case 6: JOptionPane.showMessageDialog(null,"You have reached maximum trials. Try Again Later");
                     new B_LoginForm().setVisible(true);
                     this.dispose();break;
