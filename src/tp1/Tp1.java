@@ -6,7 +6,7 @@ package tp1;
 
 /**
  *
- * @author Anshul
+ * @author Varun Jain
  */
 public class Tp1 {
 

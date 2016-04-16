@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Anshul
+ * @author Varun Jain
  */
 public class C_AdminForm extends javax.swing.JFrame {
 
@@ -336,9 +336,7 @@ public class C_AdminForm extends javax.swing.JFrame {
             }
         ));
         sp1.setViewportView(tab1);
-        if (tab1.getColumnModel().getColumnCount() > 0) {
-            tab1.getColumnModel().getColumn(7).setHeaderValue("Item");
-        }
+        tab1.getColumnModel().getColumn(7).setHeaderValue("Item");
 
         jPanel5.add(sp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 872, 161));
 

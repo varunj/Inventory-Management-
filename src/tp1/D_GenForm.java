@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Anshul
+ * @author Varun Jain
  */
 public class D_GenForm extends javax.swing.JFrame {
 

@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Anshul
+ * @author Varun Jain
  */
 public class E_ResetForm extends javax.swing.JFrame {
         int n=0,ans=0;
@@ -27,7 +27,7 @@ public class E_ResetForm extends javax.swing.JFrame {
         t3.setVisible(false);
         t4.setVisible(false);
         jButton1.setVisible(false);
-        jLabel5.setIcon(new ImageIcon("C:\\Users\\Public\\IP\\Captcha1.jpg"));        
+        jLabel5.setIcon(new ImageIcon("resources//Captcha1.jpg"));        
     }
 
     /**
@@ -79,7 +79,7 @@ public class E_ResetForm extends javax.swing.JFrame {
         jLabel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jLabel5.setOpaque(true);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tp1/RefreshIcon.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon("resources//RefreshIcon.png"));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -109,28 +109,27 @@ public class E_ResetForm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(0, 0, Short.MAX_VALUE)
-                            .addComponent(jButton1)
-                            .addGap(33, 33, 33)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel4))
-                            .addGap(48, 48, 48)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(t2, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                                .addComponent(t4)
-                                .addComponent(t3))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(t3, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                                    .addComponent(t4)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addGap(75, 75, 75)
+                                        .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(35, 35, 35))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel7)
@@ -139,8 +138,16 @@ public class E_ResetForm extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel1)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(t1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(32, 32, 32))
+                            .addComponent(t1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(34, 34, 34))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(106, 106, 106)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,38 +156,34 @@ public class E_ResetForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(t5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(64, 64, 64))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(t3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(t4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jButton1)))
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
@@ -188,14 +191,14 @@ public class E_ResetForm extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         n=n+1;
-             switch(n)
+        switch(n)
         {
-            case 1: jLabel5.setIcon(new ImageIcon(".\\Captcha2.jpg"));break;
-            case 2: jLabel5.setIcon(new ImageIcon(".\\Captcha3.jpg"));break;
-            case 3: jLabel5.setIcon(new ImageIcon(".\\Captcha4.jpg"));break;
-            case 4: jLabel5.setIcon(new ImageIcon(".\\Captcha5.jpg"));break;
-            case 5: jLabel5.setIcon(new ImageIcon(".\\Captcha6.jpg"));break;
-            case 6: JOptionPane.showMessageDialog(null,"You have reached maximum trials. Try Again Later");
+            case 1: jLabel5.setIcon(new ImageIcon("resources//Captcha2.jpg"));break;
+            case 2: jLabel5.setIcon(new ImageIcon("resources//Captcha3.jpg"));break;
+            case 3: jLabel5.setIcon(new ImageIcon("resources//Captcha4.jpg"));break;
+            case 4: jLabel5.setIcon(new ImageIcon("resources//Captcha5.jpg"));break;
+            case 5: jLabel5.setIcon(new ImageIcon("resources//Captcha6.jpg"));break;
+            case 6: JOptionPane.showMessageDialog(null,"You have reached maximum trials. Try Again Later. Will redirect you now.");
                     new B_LoginForm().setVisible(true);
                     this.dispose();break;
            default: jLabel5.setText("Image Not Found."+"\n"+" Try Refresh Button.");
@@ -213,8 +216,8 @@ public class E_ResetForm extends javax.swing.JFrame {
     }//GEN-LAST:event_t2FocusLost
 
     private void t2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t2KeyReleased
-String captcha = t2.getText(), sw = (""+n)+captcha;
-                switch(sw)
+        String captcha = t2.getText(), sw = (""+n)+captcha;
+        switch(sw)
         {
             case "0pulymbe": ans = 1;break;
             case "1CnItal": ans = 1;break;
@@ -224,34 +227,44 @@ String captcha = t2.getText(), sw = (""+n)+captcha;
             case "5howithes": ans = 1;break;
             default: ans = 0;
         }  
-                if(ans==1) 
-            {            
-                jLabel3.setVisible(true);
-                jLabel4.setVisible(true);
-                jButton1.setVisible(true);
-                t3.setVisible(true);
-                t4.setVisible(true);
-            }      
-            // TODO add your handling code here:
+        if(ans==1) 
+        {            
+            jLabel3.setVisible(true);
+            jLabel4.setVisible(true);
+            jButton1.setVisible(true);
+            t3.setVisible(true);
+            t4.setVisible(true);
+        }      
+        // TODO add your handling code here:
     }//GEN-LAST:event_t2KeyReleased
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      String pw1 = new String (t3.getPassword()), pw2 = new String (t4.getPassword()), skey = t1.getText(), skey2 = "",username = t5.getText();
+        String pw1 = new String (t3.getPassword()), pw2 = new String (t4.getPassword()), skey = t1.getText(), username = t5.getText();
         if(pw1.equals(pw2))
         {
-          try
+            try
             {
-	Class.forName("java.sql.DriverManager");
-	Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
-	Statement stmt = (Statement) con.createStatement();
-        String query = "UPDATE id set pw='"+pw1+"' where pw='"+skey+"' and usr='"+username+"';";
-        stmt.executeUpdate(query);
+                Class.forName("java.sql.DriverManager");
+                Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
+                Statement stmt = (Statement) con.createStatement();
+                String query = "UPDATE id set pw='"+pw1+"' where pw='"+skey+"' and usr='"+username+"';";
+                stmt.executeUpdate(query);
+                JOptionPane.showMessageDialog(this, "Updated Password");
+                jLabel3.setVisible(false);
+                jLabel4.setVisible(false);
+                t2.setText("");
+                t3.setText("");
+                t3.setVisible(false);
+                t4.setText("");
+                t4.setVisible(false);
+                jButton1.setVisible(false);
+                jLabel5.setIcon(new ImageIcon("resources//Captcha1.jpg"));
             }
           
-        catch(Exception e)
-        {
-	JOptionPane.showMessageDialog(this, e.getMessage());
-        }
+            catch(Exception e)
+            {
+               JOptionPane.showMessageDialog(this, e.getMessage());
+            }
       }
         
         else

@@ -6,13 +6,11 @@ package tp1;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JOptionPane;
 import javax.swing.Timer;
-import javax.swing.JProgressBar;
 
 /**
  *
- * @author admin
+ * @author Varun Jain
  */
 public class A_IntroForm extends javax.swing.JFrame {
         int s=0;
@@ -22,48 +20,45 @@ public class A_IntroForm extends javax.swing.JFrame {
      */
     public A_IntroForm() {
         initComponents();
-
+        t = new Timer (500, new ActionListener(){
+        public void actionPerformed(ActionEvent e)
+        {
+            s=s+20;
+            jProgressBar1.setValue(s);
+            if (s == 20)
+            {
+                jLabel1.setText("Loading Login_Form");
+            }
+            if (s == 40)
+            {
+                jLabel1.setText("Loading Admin_Form");
+            }
+            if (s == 60)
+            {
+                jLabel1.setText("Loading Gen_Form");
+            }
+            if (s == 80)
+            {
+                jLabel1.setText("Loading Reset_Form");
+            }
+            if (s == 100)
+            {
+                jLabel1.setText("Loading Images");
+            }
+            if (s == 120)
+            {
+                jLabel1.setText("Establishing MySQL Connection");
+            }
+            if (s == 140)
+            {
+                A_IntroForm.this.dispose();
+                new B_LoginForm().setVisible(true);
+                t.stop();
+            }
+        }});
+        t.start();
         
-        t = new Timer (1000, new ActionListener(){
-      public void actionPerformed(ActionEvent e)
-      {
-       s=s+20;
-       jProgressBar1.setValue(s);
-
-          if (s == 20)
-          {
-              jLabel1.setText("Loading Login_Form");
-          }
-          if (s == 40)
-          {
-              jLabel1.setText("Loading Admin_Form");
-          }
-          if (s == 60)
-          {
-              jLabel1.setText("Loading Gen_Form");
-          }
-          if (s == 80)
-          {
-              jLabel1.setText("Loading Reset_Form");
-          }
-          if (s == 100)
-          {
-              jLabel1.setText("Loading Images");
-          }
-          if (s == 120)
-          {
-              jLabel1.setText("Establishing MySQL Connection");
-          }
-          if (s == 140)
-          {
-              A_IntroForm.this.dispose();
-              new B_LoginForm().setVisible(true);
-              t.stop();
-          }
-      }});
-       t.start();
-        
-         }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -78,17 +73,15 @@ public class A_IntroForm extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1280, 768));
-        setPreferredSize(new java.awt.Dimension(1280, 768));
+        setMaximumSize(new java.awt.Dimension(737, 405));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
 
         jProgressBar1.setMaximum(140);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel2.setText("Please Wait While the Program Loads");
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
@@ -97,55 +90,39 @@ public class A_IntroForm extends javax.swing.JFrame {
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel3.setPreferredSize(new java.awt.Dimension(1280, 46));
 
-        jLabel4.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("<html><body><p>A Project By</p><p align=right>Varun Jain<!--<br>P. Anshul<br><br>Delhi Public School Gurgaon<br>2013-14-->");
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tp1/Untitled.jpg"))); // NOI18N
+        jLabel4.setText("<html><body><p>A Project By</p><p align=right>Varun Jain, Siddharth Singh<!--<br>P. Anshul<br><br>Delhi Public School Gurgaon<br>2013-14-->");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(jLabel5)
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(480, 480, 480)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(334, 334, 334)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 1141, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jLabel2)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(70, 70, 70))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(154, 154, 154)))
+                .addGap(57, 57, 57)
                 .addComponent(jLabel2)
-                .addGap(37, 37, 37)
+                .addGap(18, 18, 18)
                 .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
         );
 
         pack();
@@ -190,7 +167,6 @@ public class A_IntroForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
 }
