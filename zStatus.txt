@@ -1,0 +1,14 @@
+nos of tables = 3
+
+B: login 
+	match with <user, pass, type> to login
+C: admin
+	add user
+	add item
+	retrieve id
+	retrieve itms
+	retrieve orders
+	modify to complete order
+	delete item
+E: chnage password 
+	match with <old> to replace

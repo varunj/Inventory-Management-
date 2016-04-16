@@ -1,0 +1,6 @@
+1. Your database schema should be at least in 3NF and have at least 5 tables.
+2. Create at least 5 forms for different queries.
+3. Use of 12 to 15 SQL queries supporting the application features involving database access and manipulation
+4. ER diagram representing the database design
+
+*remember to import absolut layout
