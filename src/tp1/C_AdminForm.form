@@ -608,11 +608,11 @@
                     <Column editable="true" title="Order Number" type="java.lang.Object"/>
                     <Column editable="true" title="User" type="java.lang.Object"/>
                     <Column editable="true" title="Item Code" type="java.lang.Object"/>
-                    <Column editable="true" title="Item Name" type="java.lang.Object"/>
                     <Column editable="true" title="Quantity" type="java.lang.Object"/>
                     <Column editable="true" title="Price" type="java.lang.Object"/>
                     <Column editable="true" title="Date" type="java.lang.Object"/>
                     <Column editable="true" title="Status" type="java.lang.Object"/>
+                    <Column editable="true" title="Checked" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -653,7 +653,7 @@
                       <Renderer/>
                     </Column>
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title value="Item"/>
+                      <Title/>
                       <Editor/>
                       <Renderer/>
                     </Column>

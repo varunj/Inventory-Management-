@@ -124,7 +124,6 @@ public class D_GenForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1000, 490));
-        setPreferredSize(new java.awt.Dimension(1000, 490));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -139,7 +138,7 @@ public class D_GenForm extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Order Number", "Item Code", "Item Name", "Quantity", "Price", "Date", "Status"
+                "Order Number", "Item Code", "Quantity", "Price", "Date", "Status", "Checked"
             }
         ));
         jScrollPane2.setViewportView(tab1);
@@ -477,7 +476,7 @@ public class D_GenForm extends javax.swing.JFrame {
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
             Statement stmt = (Statement) con.createStatement();
-            String query = "INSERT INTO orders VALUES('"+order+"','"+Tp1.usr+"','"+ItemCode+"','"+ItemName+"',"+Num+","+Total+",sysdate(),'Order Placed','Checked');";
+            String query = "INSERT INTO orders VALUES('"+order+"','"+Tp1.usr+"','"+ItemCode+"',"+Num+","+Total+",sysdate(),'Order Placed','Checked');";
             stmt.executeUpdate(query);
             JOptionPane.showMessageDialog(this, "Order Placed Successfully");
         }
@@ -528,7 +527,7 @@ public class D_GenForm extends javax.swing.JFrame {
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next())
             {
-                String b = rs.getString(9);
+                String b = rs.getString(8);
                 if(b.equals("Unchecked"))
                 {
                     JOptionPane.showMessageDialog(this, "Your have updates for your order(s)");

@@ -352,13 +352,10 @@ public class C_AdminForm extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Order Number", "User", "Item Code", "Item Name", "Quantity", "Price", "Date", "Status"
+                "Order Number", "User", "Item Code", "Quantity", "Price", "Date", "Status", "Checked"
             }
         ));
         sp1.setViewportView(tab1);
-        if (tab1.getColumnModel().getColumnCount() > 0) {
-            tab1.getColumnModel().getColumn(7).setHeaderValue("Item");
-        }
 
         jPanel5.add(sp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 872, 161));
 
@@ -465,8 +462,7 @@ public class C_AdminForm extends javax.swing.JFrame {
             String f = rs.getString(6);
             String g = rs.getString(7);
             String h = rs.getString(8);
-            String i = rs.getString(9);
-            model.addRow(new Object[] {a,b,c,d,e,f,g,h,i});
+            model.addRow(new Object[] {a,b,c,d,e,f,g,h});
         }
         }
         catch(Exception e)
@@ -607,7 +603,7 @@ public class C_AdminForm extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         int n = tab1.getSelectedRow();
-        String val = (String) tab1.getValueAt(n, 7);
+        String val = (String) tab1.getValueAt(n, 6);
         String orderno = (String) tab1.getValueAt(n, 0);
         if(val.equals("Order Placed"))
         {
