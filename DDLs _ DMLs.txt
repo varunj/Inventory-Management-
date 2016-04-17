@@ -3,7 +3,7 @@ use projectbuy;
 
 create table id(usr varchar(30) Primary Key, pw varchar(30), type char(3));
 create table items(ItemCode char(2) Primary Key, ItemName varchar(100), Price integer, Item varchar(30));
-create table orders(OrderNumber varchar(20) Primary Key, User varchar(50), ItemCode char(2), Quantity integer, Price integer, Date date, Status varchar(50), Checked varchar(30));
+create table orders(OrderNumber varchar(20) Primary Key, User varchar(50), ItemCode char(2), Quantity integer, Price integer, Date date, Status varchar(50), Checked varchar(30), CompletionDate date);
 
 insert into id values('varun','null','adm');
 insert into id values('anshul','hoola','adm');

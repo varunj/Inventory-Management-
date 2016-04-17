@@ -352,7 +352,7 @@ public class C_AdminForm extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Order Number", "User", "Item Code", "Quantity", "Price", "Date", "Status", "Checked"
+                "Order Number", "User", "Item Code", "Quantity", "Price", "Date", "Status", "Checked", "CompletedOn"
             }
         ));
         sp1.setViewportView(tab1);
@@ -462,7 +462,8 @@ public class C_AdminForm extends javax.swing.JFrame {
             String f = rs.getString(6);
             String g = rs.getString(7);
             String h = rs.getString(8);
-            model.addRow(new Object[] {a,b,c,d,e,f,g,h});
+            String i = rs.getString(9);
+            model.addRow(new Object[] {a,b,c,d,e,f,g,h,i});
         }
         }
         catch(Exception e)
@@ -612,7 +613,7 @@ public class C_AdminForm extends javax.swing.JFrame {
             Class.forName("java.sql.DriverManager");
             java.sql.Connection con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
             java.sql.Statement stmt = (java.sql.Statement) con.createStatement();
-            String query = "UPDATE orders SET Status = 'Completed', Checked = 'Unchecked' WHERE OrderNumber = '"+orderno+"';";
+            String query = "UPDATE orders SET Status = 'Completed', Checked = 'Unchecked', CompletionDate = sysdate() WHERE OrderNumber = '"+orderno+"'; ";
             stmt.executeUpdate(query);
             JOptionPane.showMessageDialog(this, "Order Completed");
             }

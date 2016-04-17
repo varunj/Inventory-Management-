@@ -138,7 +138,7 @@ public class D_GenForm extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Order Number", "Item Code", "Quantity", "Price", "Date", "Status", "Checked"
+                "Order Number", "Item Code", "Quantity", "Price", "Date", "Status", "Checked", "CompletedOn"
             }
         ));
         jScrollPane2.setViewportView(tab1);
@@ -476,7 +476,7 @@ public class D_GenForm extends javax.swing.JFrame {
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
             Statement stmt = (Statement) con.createStatement();
-            String query = "INSERT INTO orders VALUES('"+order+"','"+Tp1.usr+"','"+ItemCode+"',"+Num+","+Total+",sysdate(),'Order Placed','Checked');";
+            String query = "INSERT INTO orders VALUES('"+order+"','"+Tp1.usr+"','"+ItemCode+"',"+Num+","+Total+",sysdate(),'Order Placed','Checked','9999-12-31');";
             stmt.executeUpdate(query);
             JOptionPane.showMessageDialog(this, "Order Placed Successfully");
         }
@@ -506,7 +506,8 @@ public class D_GenForm extends javax.swing.JFrame {
                 String e = rs.getString(6);
                 String f = rs.getString(7);
                 String g = rs.getString(8);
-                model.addRow(new Object[] {a,b,c,d,e,f,g});
+                String h = rs.getString(9);
+                model.addRow(new Object[] {a,b,c,d,e,f,g,h});
             }
         }
         catch(Exception e)
