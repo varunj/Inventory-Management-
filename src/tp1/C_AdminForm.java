@@ -702,7 +702,6 @@ public class C_AdminForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        this.dispose();
         new  G_AdminStats().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
 
