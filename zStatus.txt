@@ -24,13 +24,13 @@ E: chnage password
 	match with <old> to replace
 ---------------------------------------------------------------------------
 EXPECTATIONS:
-1. Your database schema should be at least in 3NF and have at least 5 tables, at least 5 forms.
+1. Your database schema should be at least in 3NF and have at least 5 tables, at least 5 forms, 30 entries per table.
 2. 5 different application features(eg. forms, filters) supported by your application, corresponding to 5 different SQL queries 
 3. Use of 12 to 15 SQL queries supporting the application features involving database access and manipulation
 4. ER diagram, minimal relational schema design and FDs
 ---------------------------------------------------------------------------
 TO DO:
 Siddharth: ER diagram, minimal relational schema design and FDs
-Varun: Stats + Meet Expectations
+Varun: Stats + Filter on Queries + Meet Expectations
 ---------------------------------------------------------------------------
 *remember to import absolut layout
