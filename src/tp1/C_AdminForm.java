@@ -46,6 +46,8 @@ public class C_AdminForm extends javax.swing.JFrame {
         t2 = new javax.swing.JTextField();
         t1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        t5 = new javax.swing.JComboBox();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         t6 = new javax.swing.JTextField();
@@ -110,6 +112,10 @@ public class C_AdminForm extends javax.swing.JFrame {
 
         jLabel3.setText("Description");
 
+        jLabel8.setText("Type");
+
+        t5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "electronics", "stationery", "fnb", "humanResouce", "merchendise" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -123,23 +129,28 @@ public class C_AdminForm extends javax.swing.JFrame {
                             .addComponent(jLabel6))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(t1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(t3, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(108, 108, 108)))
+                            .addComponent(t1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(t3, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1))
-                        .addGap(43, 43, 43))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(18, 18, 18)
+                                .addComponent(t5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(107, 107, 107))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
                         .addComponent(t4)
                         .addGap(35, 35, 35))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(248, 248, 248)
+                .addComponent(jButton1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,12 +165,15 @@ public class C_AdminForm extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(t3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(jLabel8)
+                    .addComponent(t5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(t4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 153, 153), new java.awt.Color(153, 153, 153), new java.awt.Color(153, 153, 153), new java.awt.Color(153, 153, 153)));
@@ -206,7 +220,7 @@ public class C_AdminForm extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(t7, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                         .addComponent(jLabel4))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jRadioButton1)
@@ -351,7 +365,7 @@ public class C_AdminForm extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Item Code", "Item Name", "Price", "Item"
+                "Item Code", "Item Name", "Price", "Item", "Type"
             }
         ));
         sp2.setViewportView(tab2);
@@ -374,7 +388,7 @@ public class C_AdminForm extends javax.swing.JFrame {
         jLabel10.setText("Add a new Account");
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel11.setText("Add Item");
+        jLabel11.setText("Add Item/ Modify Price");
 
         jMenu1.setText("Options");
         jMenu1.addActionListener(new java.awt.event.ActionListener() {
@@ -406,11 +420,11 @@ public class C_AdminForm extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel10)
                             .addComponent(jLabel11))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 103, Short.MAX_VALUE))
+                        .addGap(0, 88, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -504,7 +518,8 @@ public class C_AdminForm extends javax.swing.JFrame {
                 String b = rs.getString(2);
                 String c = rs.getString(3);
                 String d = rs.getString(4);
-                model.addRow(new Object[] {a,b,c,d});
+                String e = rs.getString(5);
+                model.addRow(new Object[] {a,b,c,d,e});
             }
         }
         catch(Exception e)
@@ -519,6 +534,7 @@ public class C_AdminForm extends javax.swing.JFrame {
         String item = t2.getText();
         String price = t3.getText();
         String desc = t4.getText();
+        String type = t5.getSelectedItem().toString();
         
         if(!(itemcode.equals("") || item.equals("") || price.equals("") || desc.equals("")))
         {   
@@ -527,13 +543,14 @@ public class C_AdminForm extends javax.swing.JFrame {
                 Class.forName("java.sql.DriverManager");
                 java.sql.Connection con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
                 java.sql.Statement stmt = (java.sql.Statement) con.createStatement();
-                String query = "INSERT INTO items VALUES('"+itemcode+"','"+desc+"','"+price+"','"+item+"');";
+                String query = "INSERT INTO items VALUES('"+itemcode+"','"+desc+"','"+price+"','"+item+"','"+type+"');";
                 stmt.executeUpdate(query);
                 JOptionPane.showMessageDialog(this, "Item Added");
                 t1.setText("");
                 t2.setText("");
                 t3.setText("");
                 t4.setText("");
+                t5.setSelectedIndex(0);
             }
             catch(Exception e)
             {
@@ -572,6 +589,8 @@ public class C_AdminForm extends javax.swing.JFrame {
                 String query = "DELETE FROM items WHERE ItemCode = '"+val+"';";
                 stmt.executeUpdate(query);
                 JOptionPane.showMessageDialog(this, "Item Deleted");
+                System.out.println("");
+                jButton3ActionPerformed(evt);
             }
             catch(Exception e)
             {
@@ -629,6 +648,7 @@ public class C_AdminForm extends javax.swing.JFrame {
             String query = "UPDATE orders SET Status = 'Completed', Checked = 'Unchecked', CompletionDate = sysdate(),CompletedBy = '"+Tp1.usr+"' WHERE OrderNumber = '"+orderno+"'; ";
             stmt.executeUpdate(query);
             JOptionPane.showMessageDialog(this, "Order Completed");
+            jButton2ActionPerformed(evt);
             }
             catch(Exception e)
             {
@@ -765,6 +785,7 @@ public class C_AdminForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
@@ -782,6 +803,7 @@ public class C_AdminForm extends javax.swing.JFrame {
     private javax.swing.JTextField t2;
     private javax.swing.JTextField t3;
     private javax.swing.JTextField t4;
+    private javax.swing.JComboBox t5;
     private javax.swing.JTextField t6;
     private javax.swing.JTextField t7;
     private javax.swing.JTable tab1;

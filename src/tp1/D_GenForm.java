@@ -209,6 +209,11 @@ public class D_GenForm extends javax.swing.JFrame {
                 cb1ItemStateChanged(evt);
             }
         });
+        cb1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb1ActionPerformed(evt);
+            }
+        });
 
         spn.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
         spn.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -408,16 +413,17 @@ public class D_GenForm extends javax.swing.JFrame {
             Class.forName("java.sql.DriverManager");
             Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
             Statement stmt = (Statement) con.createStatement();
-            String query = "SELECT * FROM items WHERE ItemCode = '"+ItemCode+"' ;";
+            String query = "SELECT * FROM items, tax WHERE items.typee = tax.typee and ItemCode = '"+ItemCode+"' ;";
             ResultSet rs = stmt.executeQuery(query);
             if(rs.next())
             {
                 ItemName = rs.getString(2);
-                Price = Integer.parseInt(rs.getString(3));
+                Price = (int) (Integer.parseInt(rs.getString(3))* (1 + ((Integer.parseInt(rs.getString(7))*1.0)/100)));
             }
         }
         catch(Exception e)
         {
+            System.out.println("jfdbhb");
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
         t1.setText(ItemName);
@@ -554,6 +560,10 @@ public class D_GenForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(D_GenForm.this, e.getMessage());
         }
     }//GEN-LAST:event_formWindowOpened
+
+    private void cb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb1ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -2,22 +2,29 @@ create database projectbuy;
 use projectbuy;
 
 create table id(usr varchar(30) Primary Key, pw varchar(30), type char(3));
-create table items(ItemCode char(2) Primary Key, ItemName varchar(100), Price integer, Item varchar(30));
+create table items(ItemCode char(2) Primary Key, ItemName varchar(100), Price integer, Item varchar(30), typee varchar(30));
 create table orders(OrderNumber varchar(20) Primary Key, User varchar(50), ItemCode char(2), Quantity integer, Price integer, Date date, Status varchar(50), Checked varchar(30), CompletionDate date, CompletedBy varchar(30));
+create table tax (typee varchar(30), tax int);
 
 insert into id values('varun','null','adm');
 insert into id values('anshul','hoola','adm');
 insert into id values('user','pass','gen');
 
-insert into items values('01' , 'Panasonic KX-TS880MXBD' , 2800 , 'Telephone' );
-insert into items values('02' , 'Bambalio Cross-cut Office Paper Shredder' , 9900 , 'Paper Shredder' );
-insert into items values('03' , 'HP LaserJet 1020 - 1020 Plus Single Function Laser Printer' , 7300 , 'Printer - LaserJet' );
-insert into items values('04' , 'HP Deskjet 1510 Multifunction Inkjet Printer' , 3550 , 'Printer - InkJet' );
-insert into items values('05' , 'HP 6460b ProBook' , 43600 , 'Laptop - HP' );
-insert into items values('06' , 'Dell V2420 Ci3 3rd gen Vostro Series' , 43500 , 'Laptop - Dell' );
-insert into items values('07' , 'Belkin 4 Socket Surge Protector' , 700 , 'Extension Chord' );
-insert into items values('08' , 'Casio Business Model - KL-820 Label Printer' , 2800 , 'Label Printer' );
-insert into items values('09' , 'Dell M110 Projector' , 34000 , 'Projector' );
-insert into items values('10' , 'WD My Passport 1 TB External Hard Disk' , 4000 , 'Ext Hard Disk - 1 TB' );
-insert into items values('11' , 'Seagate Expansion 2 TB External Hard Disk' ,  6700 , 'Ext Hard Disk - 2 TB');
-insert into items values('12' , 'Cisco Linksys X3500 - N750 Dual-band Wireless Router' , 9800 , 'Router' );
+insert into items values('01' , 'Panasonic KX-TS880MXBD' , 2800 , 'Telephone' , 'electronics');
+insert into items values('02' , 'Bambalio Cross-cut Office Paper Shredder' , 9900 , 'Paper Shredder', 'electronics');
+insert into items values('03' , 'HP LaserJet 1020 - 1020 Plus Single Function Laser Printer' , 7300 , 'Printer - LaserJet', 'electronics');
+insert into items values('04' , 'HP Deskjet 1510 Multifunction Inkjet Printer' , 3550 , 'Printer - InkJet', 'electronics');
+insert into items values('05' , 'HP 6460b ProBook' , 43600 , 'Laptop - HP', 'electronics');
+insert into items values('06' , 'Dell V2420 Ci3 3rd gen Vostro Series' , 43500 , 'Laptop - Dell', 'electronics');
+insert into items values('07' , 'Belkin 4 Socket Surge Protector' , 700 , 'Extension Chord', 'electronics');
+insert into items values('08' , 'Casio Business Model - KL-820 Label Printer' , 2800 , 'Label Printer', 'electronics');
+insert into items values('09' , 'Dell M110 Projector' , 34000 , 'Projector', 'electronics');
+insert into items values('10' , 'WD My Passport 1 TB External Hard Disk' , 4000 , 'Ext Hard Disk - 1 TB', 'electronics');
+insert into items values('11' , 'Seagate Expansion 2 TB External Hard Disk' ,  6700 , 'Ext Hard Disk - 2 TB', 'electronics');
+insert into items values('12' , 'Cisco Linksys X3500 - N750 Dual-band Wireless Router' , 9800 , 'Router', 'electronics');
+
+insert into tax values('electronics', 12);
+insert into tax values('stationery', 10);
+insert into tax values('fnb', 9);
+insert into tax values('humanResouce', 0);
+insert into tax values('merchendise', 2);
