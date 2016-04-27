@@ -5,8 +5,10 @@ QUERIES:
 B: login 
 	match with <user, pass, type> to login
 C: admin
+	add attendence
 	add user
 	add item
+	modify item
 	retrieve id
 	retrieve itms
 	retrieve orders
@@ -15,13 +17,15 @@ C: admin
 D: user
 	retrieve itms
 	modify to change password
-	retrieve price, desc
+	retrieve with join	 price, desc
 	add order
 	retrieve orders
 	find uncheck at open
 	modify unchk at open
 E: chnage password 
 	match with <old> to replace
+G: adminStats
+	retrieve group by attendence
 ---------------------------------------------------------------------------
 EXPECTATIONS:
 1. Your database schema should be at least in 3NF and have at least 5 tables, at least 5 forms, 30 entries per table.

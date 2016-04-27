@@ -77,6 +77,7 @@ public class C_AdminForm extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1280, 768));
@@ -267,7 +268,7 @@ public class C_AdminForm extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setText("View Stats");
+        jButton8.setText("Attendence Stats");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
@@ -405,6 +406,14 @@ public class C_AdminForm extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
+        jMenuItem2.setText("Clear Cache");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
+
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
@@ -420,11 +429,11 @@ public class C_AdminForm extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel10)
                             .addComponent(jLabel11))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 88, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -541,10 +550,10 @@ public class C_AdminForm extends javax.swing.JFrame {
             try
             {
                 Class.forName("java.sql.DriverManager");
-                java.sql.Connection con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
-                java.sql.Statement stmt = (java.sql.Statement) con.createStatement();
-                String query = "INSERT INTO items VALUES('"+itemcode+"','"+desc+"','"+price+"','"+item+"','"+type+"');";
-                stmt.executeUpdate(query);
+                java.sql.Connection con2 = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
+                java.sql.Statement stmt2 = (java.sql.Statement) con2.createStatement();
+                String query2 = "INSERT INTO items VALUES('"+itemcode+"','"+desc+"','"+price+"','"+item+"','"+type+"');";
+                stmt2.executeUpdate(query2);
                 JOptionPane.showMessageDialog(this, "Item Added");
                 t1.setText("");
                 t2.setText("");
@@ -554,7 +563,24 @@ public class C_AdminForm extends javax.swing.JFrame {
             }
             catch(Exception e)
             {
-                JOptionPane.showMessageDialog(this, e.getMessage());
+                try
+                {
+                    Class.forName("java.sql.DriverManager");
+                    java.sql.Connection con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
+                    java.sql.Statement stmt = (java.sql.Statement) con.createStatement();
+                    String query = "UPDATE items SET ItemName = '"+desc+"', Price = "+price+", Item = '"+item+"', typee = '"+type+"' WHERE ItemCode = '"+itemcode+"'; ";
+                    stmt.executeUpdate(query);
+                    JOptionPane.showMessageDialog(this, "Item Modified");
+                    t1.setText("");
+                    t2.setText("");
+                    t3.setText("");
+                    t4.setText("");
+                    t5.setSelectedIndex(0);
+                }
+                catch (Exception e2)
+                {
+                    JOptionPane.showMessageDialog(this, e2.getMessage());
+                }
             }
         }
         else
@@ -573,6 +599,18 @@ public class C_AdminForm extends javax.swing.JFrame {
         sp1.setVisible(false);
         sp2.setVisible(false);
         sp3.setVisible(false);
+        try
+        {
+            Class.forName("java.sql.DriverManager");
+            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
+            Statement stmt = (Statement) con.createStatement();
+            String query = "INSERT INTO attendence VALUES('"+Tp1.usr+"' ,sysdate());";
+            stmt.executeUpdate(query);
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -642,13 +680,13 @@ public class C_AdminForm extends javax.swing.JFrame {
         {
             try
             {
-            Class.forName("java.sql.DriverManager");
-            java.sql.Connection con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
-            java.sql.Statement stmt = (java.sql.Statement) con.createStatement();
-            String query = "UPDATE orders SET Status = 'Completed', Checked = 'Unchecked', CompletionDate = sysdate(),CompletedBy = '"+Tp1.usr+"' WHERE OrderNumber = '"+orderno+"'; ";
-            stmt.executeUpdate(query);
-            JOptionPane.showMessageDialog(this, "Order Completed");
-            jButton2ActionPerformed(evt);
+                Class.forName("java.sql.DriverManager");
+                java.sql.Connection con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
+                java.sql.Statement stmt = (java.sql.Statement) con.createStatement();
+                String query = "UPDATE orders SET Status = 'Completed', Checked = 'Unchecked', CompletionDate = sysdate(),CompletedBy = '"+Tp1.usr+"' WHERE OrderNumber = '"+orderno+"'; ";
+                stmt.executeUpdate(query);
+                JOptionPane.showMessageDialog(this, "Order Completed");
+                jButton2ActionPerformed(evt);
             }
             catch(Exception e)
             {
@@ -725,6 +763,23 @@ public class C_AdminForm extends javax.swing.JFrame {
         new  G_AdminStats().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        try
+            {
+                Class.forName("java.sql.DriverManager");
+                java.sql.Connection con = (java.sql.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/projectbuy", "root", "null");
+                java.sql.Statement stmt = (java.sql.Statement) con.createStatement();
+                String query = "DELETE FROM attendence;";
+                stmt.executeUpdate(query);
+                JOptionPane.showMessageDialog(this, "Attendence Records Cleared");
+            }
+            catch(Exception e)
+            {
+                JOptionPane.showMessageDialog(this, e.getMessage());
+            }
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -789,6 +844,7 @@ public class C_AdminForm extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
