@@ -1,15 +1,34 @@
 create database projectbuy;
 use projectbuy;
 
+
 create table id(usr varchar(30) Primary Key, pw varchar(30), type char(3));
 create table items(ItemCode char(2) Primary Key, ItemName varchar(100), Price integer, Item varchar(30), typee varchar(30));
 create table orders(OrderNumber varchar(20) Primary Key, User varchar(50), ItemCode char(2), Quantity integer, Price integer, Date date, Status varchar(50), Checked varchar(30), CompletionDate date, CompletedBy varchar(30));
 create table tax (typee varchar(30), tax int);
 create table attendence (usr varchar(30), Datee date);
 
+
 insert into id values('varun','null','adm');
 insert into id values('anshul','hoola','adm');
+insert into id values('adm3','pass3','adm');
+insert into id values('adm4','pass4','adm');
+insert into id values('adm5','pass5','adm');
+insert into id values('adm6','pass6','adm');
+insert into id values('adm7','pass7','adm');
+insert into id values('adm8','pass8','adm');
+insert into id values('adm9','pass9','adm');
+
 insert into id values('user','pass','gen');
+insert into id values('user2','pass2','gen');
+insert into id values('user3','pass3','gen');
+insert into id values('user4','pass4','gen');
+insert into id values('user5','pass5','gen');
+insert into id values('user6','pass6','gen');
+insert into id values('user7','pass7','gen');
+insert into id values('user8','pass8','gen');
+insert into id values('user9','pass9','gen');
+
 
 insert into items values('01' , 'Panasonic KX-TS880MXBD' , 2800 , 'Telephone' , 'electronics');
 insert into items values('02' , 'Bambalio Cross-cut Office Paper Shredder' , 9900 , 'Paper Shredder', 'electronics');
@@ -23,6 +42,26 @@ insert into items values('09' , 'Dell M110 Projector' , 34000 , 'Projector', 'el
 insert into items values('10' , 'WD My Passport 1 TB External Hard Disk' , 4000 , 'Ext Hard Disk - 1 TB', 'electronics');
 insert into items values('11' , 'Seagate Expansion 2 TB External Hard Disk' ,  6700 , 'Ext Hard Disk - 2 TB', 'electronics');
 insert into items values('12' , 'Cisco Linksys X3500 - N750 Dual-band Wireless Router' , 9800 , 'Router', 'electronics');
+
+insert into items values('13' , 'Reynolds 045 Blue' , 5 , 'Pen-Ball Blue', 'stationery');
+insert into items values('14' , 'Uni KuruToga 0.5' , 150 , 'Mech Pencil', 'stationery');
+insert into items values('15' , 'Built A4 Paper' , 3 , 'A4 Paper', 'stationery');
+
+insert into items values('16' , 'Nissin Cup Noodles' , 35 , 'Insta Noodles', 'fnb');
+insert into items values('17' , 'Pringle's Sour Cream and Onion , 250 , 'Potato Chips', 'fnb');
+
+insert into items values('18' , 'Unskilled Labor' , 3000 , 'Unskilled Labor', 'humanResouce');
+insert into items values('19' , 'Skilled Labor' , 10000, 'Skilled Labor', 'humanResouce');
+
+insert into items values('20' , 'Eraser Pack of 10' , 50 , 'Erasers', 'stationery');
+insert into items values('21' , 'White Board Marker Black' , 20 , 'White Board Marker', 'stationery');
+insert into items values('22' , 'Pepsi 600mL' , 30 , 'Cold Drink', 'fnb');
+insert into items values('23' , 'Hide n Seek Milano' , 30 , 'Biscuits', 'fnb');
+insert into items values('24' , 'Lipton Green Tea' , 50 , 'Green Tea', 'fnb');
+insert into items values('25' , 'Sugar and Spice Banana Walnut Muffin' , 15 , 'Muffin', 'fnb');
+insert into items values('26' , 'Unskilled Labor- Female' , 2000 , 'Unskilled Labor - Female', 'humanResouce');
+insert into items values('27' , 'Skilled Labor - Females' , 12000, 'Skilled Labor - Female', 'humanResouce');
+
 
 insert into tax values('electronics', 12);
 insert into tax values('stationery', 10);
