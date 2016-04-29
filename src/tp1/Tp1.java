@@ -18,7 +18,7 @@ public class Tp1 {
              java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new B_LoginForm().setVisible(true);
+                new A_IntroForm().setVisible(true);
             }
         });   // TODO code application logic here
     }

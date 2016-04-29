@@ -1,5 +1,5 @@
 ---------------------------------------------------------------------------
-Nos of tables = 3
+Nos of tables = 5
 ---------------------------------------------------------------------------
 QUERIES:
 B: login 
@@ -11,13 +11,13 @@ C: admin
 	modify item
 	retrieve id
 	retrieve itms
-	retrieve orders
+	retrieve/filter orders
 	modify to complete order
 	delete item
 D: user
 	retrieve itms
 	modify to change password
-	retrieve with join	 price, desc
+	retrieve/ join price, desc
 	add order
 	retrieve orders
 	find uncheck at open
